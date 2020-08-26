@@ -1,9 +1,10 @@
 const express=require("express");
-
+const getRequest=require('./routes/Get/getWithParams');
 const postRequest= require('./routes/Post/postWithParams');
 
 const app=express();
 app.use(postRequest);
+app.use(getRequest);
 //get request
 
 // app.get("/se",(req,res)=>{
