@@ -2,6 +2,7 @@ const express=require("express");
 const getRequest=require('./routes/Get/getWithParams');
 const postRequest= require('./routes/Post/postWithParams');
 const deleteRequest=require('./routes/Delete/deleteWithParams');
+const putRequest=require('./routes/Put/putWithParams');
 
 
 
@@ -9,6 +10,7 @@ const app=express();
 app.use(postRequest);
 app.use(getRequest);
 app.use(deleteRequest);
+app.use(putRequest);
 //get request
 
 // app.get("/se",(req,res)=>{
