@@ -3,14 +3,19 @@ const getRequest=require('./routes/Get/getWithParams');
 const postRequest= require('./routes/Post/postWithParams');
 const deleteRequest=require('./routes/Delete/deleteWithParams');
 const putRequest=require('./routes/Put/putWithParams');
-
+const postWithBody=require('./routes/Post/postWithBody');
 
 
 const app=express();
+app.use(express.json());
+
 app.use(postRequest);
 app.use(getRequest);
 app.use(deleteRequest);
 app.use(putRequest);
+
+app.use(postWithBody);
+
 //get request
 
 // app.get("/se",(req,res)=>{
