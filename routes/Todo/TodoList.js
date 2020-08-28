@@ -19,8 +19,17 @@
 
   const router=Router();
 
-  router.get("/todolist",(req,res)=>{
-        return res.json(todos);
+  router.get("/todolist/:num",(req,res)=>{
+      const number=req.params.num;
+        return res.json(todos[number-1]);
+
+  });
+
+  
+  router.get("/todolist/:id",(req,res)=>{
+    const id=req.params.id;
+    const todo=todos.filter(todo=>todo.id===id);
+        return res.json(todo);
   });
 
   module.exports=router;
