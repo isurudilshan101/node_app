@@ -1,5 +1,5 @@
 const express=require("express");
-// const getRequest=require('./routes/Get/getWithParams');
+const getRequest=require('./routes/Get/getWithParams');
 // const postRequest= require('./routes/Post/postWithParams');
 // const deleteRequest=require('./routes/Delete/deleteWithParams');
 // const putRequest=require('./routes/Put/putWithParams');
@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(todolist);
 
 // app.use(postRequest);
-// app.use(getRequest);
+ app.use(getRequest);
 // app.use(deleteRequest);
 // app.use(putRequest);
 
@@ -26,11 +26,11 @@ app.use(todolist);
 
 //get with parameter 
 
-// app.get("/se/:seNo",(req,res)=>{
-//     const seNumber=req.params.seNo; 
-//     return res.json(seNumber);
+app.get("/se/:seNo",(req,res)=>{
+    const seNumber=req.params.seNo; 
+     return res.json(seNumber);
 
-// });
+});
 
 // app.get("/st/:seNo",(req,res)=>{
 //     const seNum=req.params.seNo;

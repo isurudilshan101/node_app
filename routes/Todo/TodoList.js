@@ -9,12 +9,18 @@
       },
 
       {
-          id:uuid(),
-          title: "leran nodejs",
-          description: "learn nodejs with express"
-      }
+        id:uuid(),
+        title:"leran react",
+        description: "learn react with redux"
+    }
+
+   
   ];
 
   const router=Router();
+
+  router.get("/todolist",(req,res)=>{
+        return res.json(todos);
+  });
 
   module.exports=router;
