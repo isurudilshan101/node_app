@@ -41,4 +41,14 @@
         return res.json(todos);
       });
 
+      router.delete("/deletetodo/:id",(req,res)=>{
+            const id = req.params.id;
+            const isHere=todos.some(todo=>todo.id===id);
+            if(!isHere){
+                return res.json("todo not found");
+            }
+
+
+      });
+
   module.exports=router; 
