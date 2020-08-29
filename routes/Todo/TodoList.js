@@ -26,9 +26,9 @@
   });
 
   
-  router.get("/todo/:id",(req,res)=>{
-    const id=req.params.id;
-    const todo=todos.filter(todo=>todo.id===id);
+  router.get("/todo/:idn",(req,res)=>{
+    const idno=req.params.idn;
+    const todo=todos.filter(todo=>todo.id===idno);
         return res.json(todo);
   });
 
