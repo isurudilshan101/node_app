@@ -26,10 +26,10 @@
   });
 
   
-  router.get("/todolist/:id",(req,res)=>{
+  router.get("/todo/:id",(req,res)=>{
     const id=req.params.id;
     const todo=todos.filter(todo=>todo.id===id);
         return res.json(todo);
   });
 
-  module.exports=router;
+  module.exports=router; 
