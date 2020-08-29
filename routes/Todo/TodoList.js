@@ -12,6 +12,17 @@
         id:uuid(),
         title:"leran react",
         description: "learn react with redux"
+     },
+    {
+        id:uuid(),
+        title:"leran vuejs",
+        description: "learn vuejs with vuex"
+    },
+
+    {
+        id:uuid(),
+        title:"leran angular",
+        description: "learn angular with"
     }
 
    
@@ -32,6 +43,10 @@
         return res.json(todo);
   });
 
+    router.get("/getTodo",(req,res)=>{
+            return res.json(todos);
+    });
+
   //add todo to list 
   router.post("/addtodo",(req,res)=>{
       
@@ -47,8 +62,9 @@
             if(!isHere){
                 return res.json("todo not found");
             }
-
-
+            const newtodos=todos.filter(todo=>todo.id !==id);
+            todos=newtodos;
+            return res.json(todos);
       });
 
   module.exports=router; 
