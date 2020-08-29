@@ -67,4 +67,26 @@
             return res.json(todos);
       });
 
+      //edit todo
+      router.put("/editTodo/:id",(req,res)=>{
+            const id=todos.params.id;
+            const body=req.body;
+            const isHere=todos.some(todo=>todo.id===id);
+
+            if(!isHere){
+                return res.json("todo not found");
+
+
+            }
+            const newtodos=todos.filter(todo=>todo.id !==id);
+            todos=newtodos;
+
+            let newtodo={id,...body};
+            todos=[newtodo,...todos];
+
+            return res.json(todos);
+            
+
+      });
+
   module.exports=router; 
