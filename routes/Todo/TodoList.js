@@ -32,4 +32,13 @@
         return res.json(todo);
   });
 
+  //add todo to list 
+  router.post("/addtodo",(req,res)=>{
+      
+        const body=req.body;
+        body.id=uuid();
+        todos=[...todos,body];
+        return res.json(todos);
+      });
+
   module.exports=router; 
